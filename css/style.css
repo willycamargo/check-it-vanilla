@@ -1,8 +1,62 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import 'modern-normalize/modern-normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Base */
+* {
+  font-family: 'Inter', sans-serif;
+  color: #0F172A;
+}
+
+.container {
+  width: calc(100% - 40px);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Logo */
+
+.logo {
+  max-width: 100%;
+  margin: 20px 0 0;
+}
+
+.logo__img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Form */
+.form {
+  margin-top: 40px;
+}
+
+.form__field {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form__field__label {
+  width: 100%;
+}
+
+.form__field__input {
+  flex: 3;
+  min-width: 250px;
+  height: 48px;
+  border-radius: 3px;
+  padding: 5px;
+  border: 1px solid #0F172A;
+}
+
+.form__button {
+  flex: 1;
+  min-width: 80px;
+  height: 48px;
+  background-color: #0F172A;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }

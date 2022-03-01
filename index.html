@@ -4,11 +4,23 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Check It</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>Check I</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/js/main.js"></script>
+    <div class="container">
+      <figure class="logo">
+        <img src="/img/logo.svg" alt="Logo - Check It!" class="logo__img">
+      </figure>
+
+      <form class="form">
+        <div class="form__field">
+          <label for="" class="form__field__label">New Task </label>
+          <input type="text" name="title" class="form__field__input">
+          <button type="submit" class="form__button">Add</button>
+        </div>
+      </form>
+    </div>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
