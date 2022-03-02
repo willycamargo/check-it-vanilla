@@ -1,10 +1,16 @@
 @import 'modern-normalize/modern-normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+/* Variables */
+:root {
+  --color-one: #0F172A;
+  --color-two: #FFFFFF;
+}
+
 /* Base */
 * {
   font-family: 'Inter', sans-serif;
-  color: #0F172A;
+  color: var(--color-one);
 }
 
 .container {
@@ -47,16 +53,108 @@
   height: 48px;
   border-radius: 3px;
   padding: 5px;
-  border: 1px solid #0F172A;
+  border: 1px solid var(--color-one);
 }
 
 .form__button {
   flex: 1;
   min-width: 80px;
   height: 48px;
-  background-color: #0F172A;
-  color: #FFFFFF;
+  background-color: var(--color-one);
+  color: var(--color-two);
   border: none;
   border-radius: 3px;
   cursor: pointer;
+}
+
+/* Tasks */
+.tasks-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 30px;
+}
+
+.tasks-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.tasks-section__title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tasks-section__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.tasks-section__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tasks-section__item__label {
+  flex: 1;
+  display: flex;
+}
+
+.tasks-section__item__checkbox {
+  all: unset;
+  margin-right: 6px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--color-one);
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+}
+
+.tasks-section__item__checkbox:checked {
+  background-color: var(--color-one);
+}
+
+.tasks-section__item__checkbox:checked::before {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 12px;
+  background: var(--color-two);
+  top: 2px;
+  left: 8px;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.tasks-section__item__checkbox:checked::after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 4px;
+  background: var(--color-two);
+  top: 8px;
+  left: 3px;
+  position: absolute;
+  transform: rotate(-45deg);
+}
+
+.tasks-section__item__text {
+  flex: 1;
+  cursor: pointer;
+}
+
+.tasks-section__item__checkbox:checked + .tasks-section__item__text {
+  text-decoration: line-through;
+}
+
+.tasks-section__item__remove {
+  cursor: pointer;
+  background: none;
+  border: none;
 }
