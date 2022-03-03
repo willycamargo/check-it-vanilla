@@ -1,5 +1,25 @@
 const $form = document.getElementById('form-tasks')
 
+const handleItemRemove = (event) => {
+  const $removeButton = event.target
+  const $li = $removeButton.parentElement
+  const $currentList = $li.parentElement
+  $currentList.removeChild($li)
+}
+
+const handleCheckboxChange = (event) => {
+  const $checkbox = event.target
+  const $li = $checkbox.parentElement.parentElement
+  const $tasksTodoList = document.getElementById('list-todo')
+  const $tasksDoneList = document.getElementById('list-done')
+
+  if ($checkbox.checked) {
+    $tasksDoneList.append($li)
+  } else {
+    $tasksTodoList.append($li)
+  }
+}
+
 const addTask = (title) => {
   // Criar Item (li)
   const $li = document.createElement('li')
@@ -10,11 +30,11 @@ const addTask = (title) => {
   $label.classList.add('tasks-section__item__label')
   $li.append($label)
 
-  // Criar input (input)
-  const $input = document.createElement('input')
-  $input.classList.add('tasks-section__item__checkbox')
-  $input.setAttribute('type', 'checkbox')
-  $label.append($input)
+  // Criar checkbox (input)
+  const $checkbox = document.createElement('input')
+  $checkbox.classList.add('tasks-section__item__checkbox')
+  $checkbox.setAttribute('type', 'checkbox')
+  $label.append($checkbox)
 
   // Criar span (span)
   const $span = document.createElement('span')
@@ -28,8 +48,13 @@ const addTask = (title) => {
   $removeButton.innerText = 'X'
   $li.append($removeButton)
   
-  const $tasksList = document.getElementById('list-todo')
-  $tasksList.append($li)
+  // Adicionar item na lista To-do
+  const $tasksTodoList = document.getElementById('list-todo')
+  $tasksTodoList.append($li)
+
+  // Adicionar eventos
+  $checkbox.addEventListener('change', handleCheckboxChange)
+  $removeButton.addEventListener('click', handleItemRemove)
 }
 
 const handleFormSubmit = (event) => {
@@ -38,6 +63,7 @@ const handleFormSubmit = (event) => {
   const title = formData.get('title')
 
   addTask(title)
+  $form.reset()
 }
 
 $form.addEventListener('submit', handleFormSubmit)
