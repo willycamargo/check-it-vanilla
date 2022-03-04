@@ -5,5 +5,6 @@ export default defineConfig({
     watch: {
       usePolling: true
     }
-  }
+  },
+  base: '/check-it-vanilla/'
 })
