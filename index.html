@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/check-it-vanilla/assets/favicon.6bcbbfae.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check It</title>
+    
+    <script type="module" crossorigin src="/check-it-vanilla/assets/index.1b3296de.js"></script>
+    <link rel="stylesheet" href="/check-it-vanilla/assets/index.f0df43b8.css">
+  </head>
+  <body>
+    <div class="container">
+      <figure class="logo">
+        <img src="/check-it-vanilla/assets/logo.ab6b38c5.svg" alt="Logo - Check It!" class="logo__img">
+      </figure>
+
+      <form class="form" id="form-tasks">
+        <div class="form__field">
+          <label for="" class="form__field__label">New Task </label>
+          <input required type="text" name="title" class="form__field__input">
+          <button type="submit" class="form__button">Add</button>
+        </div>
+      </form>
+
+      <div class="tasks-container">
+        <section class="tasks-section">
+          <h2 class="tasks-section__title">To-do</h2>
+          <ul class="tasks-section__list" id="list-todo">
+          </ul>
+        </section>
+
+        <section class="tasks-section">
+          <h2 class="tasks-section__title">Done</h2>
+          <ul class="tasks-section__list" id="list-done">
+          </ul>
+        </section>
+      </div>
+
+    </div>
+    
+  </body>
+</html>
