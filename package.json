@@ -6,9 +6,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "./deploy.sh"
+    "deploy": "./deploy.sh",
+    "cypress:open": "cypress open"
   },
   "devDependencies": {
+    "cypress": "^9.6.1",
     "vite": "^2.8.0"
   },
   "dependencies": {
